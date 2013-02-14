@@ -30,6 +30,10 @@
                     <ul>
 
                         <li>
+                            <a href="#general">General</a>
+                        </li>
+
+                        <li>
                             <a href="#html">HTML</a>
                         </li>
 
@@ -53,17 +57,171 @@
 
                     <h1>IIN Front End Standards</h1>
 
-                    <p>Creating and mantaining coding standards is not only important for keeping up with best practices, it helps immensely with future maintanence, onboarding, and allowing others to quickly understand your code.</p>
+                    <p>Creating and mantaining coding standards is not only important for keeping up with best practices, it can be immensely helpful with future maintanence, onboarding, and allowing others to quickly understand your code.</p>
 
-                    <p>While browsers may not care what your code looks like (so long as it's valid), other developers will.  The way code looks is a big part of how we (developers) understand it.  Think of how often you've opened up code someone else wrote, and changed the indentation to match what you like, or gone through it and added white space/comments to help you understand and quickly be able to make changes throughout the code.  When everyone is writing code that looks different, each person needs to take more time to visually parse the code before understanding it.  When everyone's code looks the same, everyone can grasp it and work with it faster and easier.</p>
+                    <p>While browsers may not care what your code looks like (so long as it's valid), other developers do.  The way code looks is a big part of how we understand it.  How many times have you opened up code someone else wrote, and changed the indentation to match what you like, or gone through it and added white space/comments to help you understand, and be able to swiftly make changes throughout the code.  When everyone is writing code that looks different, each person needs to take more time to visually parse the code.  When code is clean and consistent, everyone can grasp, and work with it faster and easier.</p>
 
-                    <p>If you think of code as an actual language (human language, not computer language), you realize that you want to be able to speak this language in a way that others familiar with the language can easily understand.  When you write me an email, I should be able to read through it briefly and quickly grasp the content.  Furthermore, if I forward that email to someone else, they too should be able to grasp it quickly.</p>
-
-                    <p></p>
+                    <p>If you think of code as an actual language (human language, not computer language), you realize that you want to be able to speak this language in a way that others familiar with the language can easily understand.  When you write me an email, I should be able to read through it briefly and quickly ascertain the point.  Furthermore, if I forward that email to someone else, they should be able to do the same.</p>
 
                 </section>
 
             </section>
+
+            <section id="general" class="general content">
+
+                <section class="contentWrapper">
+
+                    <h2>General Practices</h2>
+
+                    <section class="subSection">
+
+                        <h3>Readabilty</h3>
+
+                        <p>Readability should take preference over file size.  Don't be afraid to use whitespace to separate code.  Our CI process will take care of minification and gzipping for all the files anyway.</p>
+
+                        <pre>
+                            &lt;nav&gt;
+                                &lt;ul&gt;
+                                    &lt;li&gt;&lt;a href="#general"&gt;&lt;img src="img/general.jpg" alt="General" /&gt;&lt;/a&gt;&lt;/li&gt;
+                                    &lt;li&gt;&lt;a href="#html"&gt;&lt;img src="img/html.jpg" alt="HTML" /&gt;&lt;/li&gt;
+                                    &lt;li&gt;&lt;a href="#css"&gt;&lt;img src="img/css.jpg" alt="CSS" /&gt;&lt;/a&gt;&lt;/li&gt;
+                                    &lt;li&gt;&lt;a href="#js"&gt;&lt;img src="img/js.jpg" alt="Javascript" /&gt;&lt;/a&gt;&lt;/li&gt;
+                                &lt;/ul&gt;
+                            &lt;/nav&gt;
+                        </pre>
+
+                        <p>Above is an example of how some whitespace could really help improve readability, and speed up debugging.  There is something missing in this html that's pretty hard to spot.</p>
+
+                        <pre>
+                            &lt;nav&gt;
+                                &lt;ul&gt;
+
+                                    &lt;li&gt;
+                                        &lt;a href="#general"&gt;
+                                            &lt;img src="img/general.jpg" alt="General" /&gt;
+                                        &lt;/a&gt;
+                                    &lt;/li&gt;
+
+                                    &lt;li&gt;
+                                        &lt;a href="#html"&gt;
+                                            &lt;img src="img/html.jpg" alt="HTML" /&gt;
+
+                                    &lt;/li&gt;
+
+                                    &lt;li&gt;
+                                        &lt;a href="#css"&gt;
+                                            &lt;img src="img/css.jpg" alt="CSS" /&gt;
+                                        &lt;/a&gt;
+                                    &lt;/li&gt;
+
+                                    &lt;li&gt;
+                                        &lt;a href="#js"&gt;
+                                            &lt;img src="img/js.jpg" alt="Javascript" /&gt;
+                                        &lt;/a&gt;
+                                    &lt;/li&gt;
+
+                                &lt;/ul&gt;
+                            &lt;/nav&gt;
+                        </pre>
+
+                        <p>Now that each individual item is separated, it's much easier to see what's going on.  This kind of spacing can be helpful for finding missing closing tags, or catching them before they occur.</p>
+
+                    </section>
+
+                    <section class="subSection">
+
+                        <h3>Comments, comments, comments</h3>
+
+                        <p>Comments are an important way help separate chunks of code and explain any functionality that wouldn't be quickly discernable to other devs.</p>
+
+                        <pre>
+                            var count = parseInt(currNum) + 1;
+
+                            function timer() {
+                              count = count - 1;
+                              if ( count &lt;= 0 ) {
+                                 clearInterval(counter);
+                                 return;
+                              }
+                              currNum &gt; 500 ? startCount += 10 : startCount += 1;
+                              tooltipEl.children('.tooltip-inner').html(startCount);
+                            };
+
+                            var counter = setInterval(timer, (700 / currNum));
+                        </pre>
+
+                        <p>Above is an example of code that would be much easier to understand what's going on with a few comments.</p>
+
+                        <pre>
+                            //Set up count to be users current sessions attended
+                            //Add 1 so when this zero's out it will be at the correct number
+                            var count = parseInt(currNum) + 1;
+
+                            //timer function to make the tooltip count up on page load
+                            function timer() {
+                              //On each cycle subtract 1 from the count
+                              count = count - 1;
+                              //if the count is at zero stop the counter
+                              if ( count <= 0 ) {
+
+                                 clearInterval(counter);
+                                 return;
+
+                              }
+                              //Check if the number of attended sessions is over 500
+                              //If it is count up by 10 on each cycle so it doesn't take forever
+                              //otherwise count up by 1 on each cycle
+                              currNum > 500 ? startCount += 10 : startCount += 1;
+                              //Put the new number in the tooltip
+                              tooltipEl.children('.tooltip-inner').html(startCount);
+                            };
+
+                            //start the counter with setInterval
+                            //the animation of the progress bar takes 700ms
+                            //in order to sync the tooltip counting with this divide the animation time by the number it must count to
+                            //if 10 sessions were attended this will call timer every (700/10) 70ms until the count reach's zero
+                            var counter = setInterval(timer, (700 / currNum));
+                        </pre>
+
+                        <p>These comments make it a lot more clear what's happening here.  Instead of a random timer function in the middle of the code, I now know this is used to update the tooltip when the page loads and I have some idea of how it works.  If I was debugging something with the tooltip updating incorrectly this would save me a lot of time.</p>
+
+                    </section>
+
+                    <section class="subSection">
+
+                        <h3>Indentation</h3>
+
+                        <p>For all code languages, we require indentation to be done via soft tabs (using the space character). Hitting Tab in your text editor needs to be equivalent to four spaces.</p>
+
+                    </section>
+
+                    <section class="subSection">
+
+                        <h3>Naming Conventions</h3>
+
+                        <p>It's preferred to use names that are relative to what the object/element is rather than what it looks like.  For example, an class of 'greenDropDown' doesn't make much sense when the color gets changed to blue and someone decides we don't want it to be a dropdown anymore.  However if this dropdown was for the nav, use something like 'navMenu'.  For all class names, ids, and function names you should use camelCase.  i.e. the-frog should be theFrog, or this_id should be thisId, or stop-showing-this-stuff-to-me should be stopShowingThisStuffToMe.</p>
+
+                    </section>
+
+                    <section class="subSection">
+
+                        <h3>Cross Browser Compatibility</h3>
+
+                        <p>At IIN we support chrome, safari, opera, firefox, and IE 8+.  Please check your code in all of these browsers before passing it to QA.  While we don't explicitly support IE 7, make sure your code is not completely unusable in IE 7.</p>
+
+                    </section>
+
+                    <section class="subSection">
+
+                        <h3>Bootstrap</h3>
+
+                        <p>At IIN we use bootstrap.  Bootstrap is a handy front end framework which provides us with a nice way to keep a common theme across our sites.  If you are unfamiliar with bootstrap, there is plenty of great documentation which can be found <a href="http://twitter.github.com/bootstrap/">here</a> and <a href="https://www.google.com/">here</a>.</p>
+
+                    </section>
+
+                </section>
+
+            </section><!-- End General Section-->
 
             <section id="html" class="html content">
 
@@ -71,25 +229,424 @@
 
                     <h2>HTML Standards &amp; Style Guide</h2>
 
+                    <p>HTML is the main component of any webpage, it's also the last thing a browser has to fallback on when CSS/Javascript aren't working properly.  As such our HTML needs to be valid, clean, and structured in such a way that the page's information can still be passed on sans CSS/Javascript.</p>
+
+                    <section class="subSection">
+
+                        <h3>HTML Style Guide</h3>
+
+                        <p>As mentioned before, do not fear the white space.  Comments are your friends.  Along with the 4 spaces soft tabbing, markup should look like this.</p>
+
+                        <pre>
+                            &lt;section class="subSection"&gt;
+
+                                &lt;h3&gt;Indentation&lt;/h3&gt;
+
+                                &lt;p&gt;For all code languages, we require indentation to be done via soft tabs (using the space character). Hitting Tab in your text editor needs to be equivalent to
+                                four spaces.&lt;/p&gt;
+
+                            &lt;/section&gt;
+
+                            &lt;section class="subSection"&gt;
+
+                                &lt;h3&gt;Naming Conventions&lt;/h3&gt;
+
+                                &lt;p&gt;For all class names, ids, and function names you should use camelCase.  i.e. the-frog should be theFrog, or this_id should be thisId, or stop-showing-this-stuff-to-me
+                                 should be stopShowingThisStuffToMe&lt;/p&gt;
+
+                            &lt;/section&gt;
+                        </pre>
+
+                    </section>
+
+                    <section class="subSection">
+
+                        <h3>Doctype and Character Encoding</h3>
+
+                        <p>A proper doctype must always be declared so as not to trigger quirks mode.  Quirks mode = fail.</p>
+
+                        <p>Ideally we'll be able to use the HTML5 specification of the doctype.</p>
+
+                        <pre>
+                            &lt;!DOCTYPE html&gt;
+                        </pre>
+
+                        <p>Markup should all be delivered as UTF-8, it's the most internationally compatible form.</p>
+
+                        <p>Old school (pre HTML5) method</p>
+
+                        <pre>
+                            &lt;meta http-equiv="Content-Type" content="text/html; charset=UTF-8" /&gt;
+                        </pre>
+
+                        <p>HTML5, making things simple</p>
+
+                        <pre>
+                            &lt;meta charset=utf-8" /&gt;
+                        </pre>
+
+                    </section>
+
+                    <section class="subSection">
+
+                        <h3>General Markup Guidelines</h3>
+
+                        <p>First and foremost, it is important that developers always strive to use markup which is symantically accurate to the content being displayed.  These are general rules and best practices for structuring markup.</p>
+
+                        <p>HTML5 has provided us awesome new elements.  They all help solve different issues like lack of semantics due to 'divitis', and slowly but surely killing flash.  When possible/logical/semantical we should always try and use these new elements.</p>
+
+                        <h4>Overview</h4>
+
+                        <ul>
+
+                            <li>Tables shouldn't be used for page layout.</li>
+
+                            <li>Use double quotes around all attributes</li>
+
+                            <li>When creating attributes which are specifically used for functionality (Javascript, or backend tasks) use the data- format</li>
+
+                            <pre>
+                                &lt;span data-postedBy="bob"&gt;This document is too large&lt;/span&gt;
+
+                                function hidePostsIDontLike(name) {
+                                    var postsToHide = $("[data-postedBy=" + name " + ]");
+                                    postsToHide.hide(0);
+                                };
+                                hidePostsIDontLike("bob");
+                            </pre>
+
+                            <li>Inline styles are to be avoided, use a CSS file.</li>
+
+                            <li>Inline functionality is to be avoided, use a JS file.</li>
+
+                            <li>All form fields should have a label with a for attribute that matches the respective form field's id.  This is helpful for UX, mobile, and accessibility.</li>
+
+                            <li>Use the meta viewport tag, very important to mobile friendliness.</li>
+
+                            <pre>
+                                &lt;meta name="viewport" content="width=device-width"&gt;
+                            </pre>
+
+                            <li>With large chunks of HTML inside of an element it can be helpful to use a comment on the closing tag to indicate what element you're closing.</li>
+
+                            <li>Javascript files should be put at the bottom of the page.  Browsers load content from the top down and javascript does not allow parallel downloads (nothing else can be downloaded while a javascript file is being downloaded).</li>
+
+                            <li>Always use the appropriate case for elements.  Do not use all caps or lowercase, instead use the text-transform CSS property.</li>
+
+                            <li>Lists are lists, so they should be in a UL, OL, or DL.</li>
+
+                            <li>When creating tables (sorry) make use of the THEAD, TBODY, and TH tags when appropriate.</li>
+
+                        </ul>
+
+                    </section>
+
+
+
                 </section>
 
-            </section>
+            </section><!-- End HTML Section-->
 
-            <section id="css" class="id content">
+            <section id="css" class="css content">
 
                 <section class="contentWrapper">
 
                     <h2>CSS Standards &amp; Style Guide</h2>
 
+                    <p>CSS, enter the presentation layer.  CSS, not only does it make our sites look great, it's also daunting/confusing enough to back end developers to prevent them from doing our job.</p>
+
+                    <section class="subSection">
+
+                        <h3>CSS Style Guide</h3>
+
+                        <p>As mentioned twice before, do not fear the white space.  Comments are your friends.  Along with the 4 spaces soft tabbing, CSS should look like this.</p>
+
+                        <pre>
+                            /* ==========================================================================
+                               Nav Styles
+                                ========================================================================== */
+
+                            nav {
+                                width:67%;
+                                margin:0 auto;
+                            }
+
+                            nav li {
+                                float:left;
+                                width:20%;
+                            }
+
+                            nav ul {
+                                padding:0;
+                                margin:0;
+                            }
+
+                            nav li a {
+                                color:#fff;
+                                text-decoration:none;
+                                font-size:1.8em;
+                                font-weight:bold;
+                                text-transform:uppercase;
+                                display:block;
+                                height:45px;
+                                width:50%;
+                                padding:20px 0 0;
+                                text-align:center;
+                            }
+
+                            nav li a:hover {
+                                color:#ccc;
+                                -webkit-transition: color .15s linear .1s;
+                                -moz-transition: color .15s linear .1s;
+                                transition: color .15s linear .1s;
+                            }
+                        </pre>
+
+                    </section>
+
+                    <section class="subSection">
+
+                        <h3>Shorthand</h3>
+
+                        <p>CSS shorthand is preferred thanks to it's terseness, and ability to make faster edits to already existing values such as padding and margin.</p>
+
+                    </section>
+
+                    <section class="subSection">
+
+                        <h3>Responsive Design &amp; Mobile First</h3>
+
+                        <p>First of all, if you don't know or aren't super comfortable with responsive design, check <a href="https://www.dropbox.com/sh/3x9nqz7z16spdti/HMxmnERRLs">this</a> out.  It's a quick read, and it really covers all the bases on responsive design.</p>
+
+                        <p>If you do know and are comfortable with responsive design, make sure to always be thinking mobile first.  If you start on a new project, and nobody is talking mobile, bring it up, make sure it's a priority.  If it's not going to be, talk to the PM, the designer, or your manager and figure out why.</p>
+
+                        <p>That being said, say goodbye to pixels.  For width including margin and padding, you should use percentages.  As of now, and until the 'px vs em' debate has settled we'll be using em's for font-size.</p>
+
+                    </section>
+
+
+                    <section class="subSection">
+
+                        <h3>Images</h3>
+
+                        <p>For any background gradients it's preferred to use CSS3, however if a background image is needed use <a href="http://www.iandevlin.com/blog/2010/03/webdev/fading-issue-with-repeating-background-transparent-image-in-internet-explorer">something larger than 1x1 pixels.</a></p>
+
+                        <p>Use of <a href="http://css-tricks.com/css-sprites/">sprites</a> is heavily encouraged, cut's back on http requests as well as making hover/focus/active states easy.</p>
+
+                    </section>
+
+                    <section class="subSection">
+
+                        <h3>Typography</h3>
+
+                        <p>As previously mentioned we use bootstrap, which should handle our typography needs.</p>
+
+                    </section>
+
+                    <section class="subSection">
+
+                        <h3>Cross browser</h3>
+
+                        <p>CSS3 is still being developed, as such not all browsers were sure how to handle it.  All the good browsers wanted to get their hands on it early to give their users a better experience and help flush out CSS3.  In order to do this they created vendor prefixes to add these features that might not yet be part of a form specification.</p>
+
+                        <p>In order to support different browsers the vendor prefixes need to be used when implementing CSS3 features.</p>
+
+                        <h4>Overview</h4>
+
+                        <ul>
+
+                            <li>Android: -webkit-</li>
+
+                            <li>Chrome: -webkit-</li>
+
+                            <li>Firefox: -moz-</li>
+
+                            <li>Internet Explorer: -ms-</li>
+
+                            <li>iOS: -webkit-</li>
+
+                            <li>Opera: -webkit-</li>
+
+                            <li>Safari: -webkit-</li>
+
+                        </ul>
+
+                        <pre>
+                            -webkit-transition: all 4s ease;
+                            -moz-transition: all 4s ease;
+                            -ms-transition: all 4s ease;
+                            -o-transition: all 4s ease;
+                            transition: all 4s ease;
+
+                        </pre>
+
+                        <p>Here are a couple helpful tools, which generate the CSS with all the necessary prefix's</p>
+
+                        <a href="http://www.colorzilla.com/gradient-editor/">Gradient Generator</a>
+                        <a href="http://css3generator.com/">CSS3 generator</a>
+
+                    </section>
+
+                    <section class="subSection">
+
+                        <h3>General CSS Guidelines</h3>
+
+                        <p>There are a couple big things that can be done to really help reduce CSS clutter.  The first one is to try and cascade these cascading styles as much as you can.  Cascading not only helps mantain code, it plays a big part in mantaining a common look and feel across the site.  If you are given a design for a page in which all the font sizes are different from the rest of the site, the nav has different background colors, and things are  generally not alike to the rest of the site, push back on the design.  Talk to the PM or the designer, figure out why/if this page is supposed to be different from the other pages.</p>
+
+                        <p>The second important thing is to try and keep specificty low.  If you aren't familiar with the complex inner workings of specificity check <a href="http://coding.smashingmagazine.com/2007/07/27/css-specificity-things-you-should-know/">this</a> out, it's a pretty good explanation.</p>
+
+                        <p>When possible try and use a single container class followed by plain html selector.  Even if you can't do this, try and avoid ID's and never use !important.  This keeps the specificity low, and when you do get that crazy looking page and the PM tells you 'This page is supposed to look crazy, we're agile we can make crazy pages whenever we want.', you won't need to prefix all your selectors #crazyPage #crazyPageWrapper #crazyPageContent in order to override the styles.</p>
+
+                        <h4>Overview</h4>
+
+                        <ul>
+
+                            <li>Keep specificity low, try and use class selectors and avoid ID's.  Never use !important.</li>
+
+                            <li>Put your CSS in sections and comment when a new section begins with what the section is styling.  Keeps things organized, and easy to figure out.</li>
+
+                            <li>Stay mobile friendly, widths in percentages, font sizes in ems.</li>
+
+                            <li>Use vendor prefix for cross browser support.</li>
+
+                            <li>Use sprites when background images are needed.</li>
+
+                            <li>Use CSS3.</li>
+
+                            <li>Use shorthand CSS.</li>
+
+                            <li>Write speed friendly selectors.  Avoid the * wildcard selector and don't qualify ID selectors (e.g.div#someId) or class selectors (e.g. div.someClass).</li>
+
+                            <li>Familiar with the box model?  Get more familiar.</li>
+
+                        </ul>
+
+                    </section>
+
                 </section>
 
-            </section>
+            </section><!-- End CSS Section-->
 
             <section id="js" class="js content">
 
                 <section class="contentWrapper">
 
                     <h2>Javascript Standards &amp; Style Guide</h2>
+
+                    <p>Don't call me Java bro.</p>
+
+                    <section class="subSection">
+
+                        <h3>Javascript style guide</h3>
+
+                        <p>For the last time, white space is your friend, comments are your best friend.  Comments are especially important with javascript, a function that's using a closure and referencing variables from 1500-3000 lines up can take a fair bit of time to figure out.</p>
+
+                        <p>To quote Douglas Crockford "Javascript's loose typing and excessive error tolerance provide little compile-time assurance of our program's qulity, so to compensate, we should code with strict discipline."  With that, here is what javascript should look like.</p>
+
+                        <pre>
+
+                            //Get the question and nav elements relative to the question number passed in
+                            var correspondingQuestion = $('[data-slide="' + pressedButtonNum + '"]');
+                            var correspondingNav = $('[data-boxNum="' + pressedButtonNum + '"]');
+
+
+                            //Switch for action taken (tap nav, tap answer, or swip)
+                            switch ( type ) {
+                              //answered yes
+                              case 'answeryes' :
+
+                                correspondingNav.removeClass('btn-danger');
+                                correspondingNav.addClass('btn-success');
+
+                                break;
+                              //answered no
+                              case 'answerno' :
+
+                                correspondingNav.removeClass('btn-success');
+                                correspondingNav.addClass('btn-danger');
+
+                                break;
+                              //swiped right
+                              case 'prev' :
+
+                                //Check if this is the first question
+                                if ( pressedButtonNum === 1 ) {
+                                  correspondingQuestion = $('[data-slide=14]');
+                                  correspondingNav = $('[data-boxNum=14]');
+
+                                } else {
+                                  correspondingQuestion = $('[data-slide="' + prevNum + '"]'),
+                                  correspondingNav = $('[data-boxNum="' + prevNum + '"]');
+
+                                }
+
+                                break;
+
+                              default :
+                                break;
+                            }
+                        </pre>
+
+                    </section>
+
+                    <section class="subSection">
+
+                        <h3>General Javascript Guidelines</h3>
+
+                        <p>All of your js should be housed in exteranl javascript files, which should be placed right before the closing body tag for performance.</p>
+
+                        <p>As with HTML, always try to class/method/function/variable names sensible.  If you have a modal window for sign in, call it "signInModal" oppose to "theModal".</p>
+
+                    </section>
+
+                    <section class="subSection">
+
+                        <h3>Global Variables &amp; Module Pattern</h3>
+
+                        <p>Global variables are easily one of Javascript's worst features.  Not only do they pollute the namespace, they are also accessible by everything under the sun, and since they are the last thing on the scope chain they are bad for performance.  Global variables are to be avoided at all costs.  It doesn't really make sense to create a variable until it's going to be used, so all variables should be declared at the top of the function/method they are going to be used in.</p>
+
+                        <p>The module pattern is a great way to avoid global variables.  The basic idea is to create a single object global variable which will contain all of your method's.</p>
+
+                        <p>For more information on the module pattern read <a href="http://www.yuiblog.com/blog/2007/06/12/module-pattern/">this.</a></p>
+
+                    </section>
+
+                    <section class="subSection">
+
+                        <h3>Javascript Equality Operators &amp; Coercion</h3>
+
+                        <p>Javascript comes loaded with 2 sets of equality operators.  One of them works the way you'd expect an equality operator to work, and is the only one you should ever use.</p>
+
+                        <pre>
+                            1 === 1 //true
+                            1 === '1' //false
+                            1 !== '1' //true
+                            1 !== 1 //false
+                        </pre>
+
+                        <p>The other operator is evil, breaks code, and doesn't work like you'd expect.</p>
+
+                        <pre>
+                            1 == 1 //true
+                            1 == '1' //true
+                            1 != '1' //false
+                            1 != 1 //false
+                            ' \t\r\n ' == 0 //true
+                        </pre>
+
+                        <p>The blame for this lies within javascript's coercion "feature".  The == operator attempts to coerce the values, so mixing types (String, Number, Boolean, Array, Object, Null, Undefined) will unexpectedly return very incorrect results.  The rules for coercion are far too stupid to bother explaining/understanding.  It's basically like saying a banana and a potato are the same thing because they are both types of food you've eaten.</p>
+
+                        <p>Coercion can alse be problematic when it comes to concatenation.</p>
+
+                        <pre>
+                            1 + 'cat' //"1cat"
+                            1 + 3 + 'cat' //"4cat"
+                            1 + '3' + 'cat' //"13cat"
+                            '1' + 3 + 'cat' //"13cat"
+                            'cat' + 10 + 30 //"cat1030"
+                        </pre>
+
+                    </section>
 
                 </section>
 
