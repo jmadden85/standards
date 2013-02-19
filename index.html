@@ -57,11 +57,11 @@
 
                     <h1>IIN Front End Standards</h1>
 
-                    <p>Creating and mantaining coding standards is not only important for keeping up with best practices, it can be immensely helpful with future maintanence, onboarding, and allowing others to quickly understand your code.</p>
+                    <p>Creating and mantaining coding standards is not only important for keeping up with best practices, it can be immensely helpful with future maintanence, onboarding, and helping other devs to quickly understand your code.</p>
 
                     <p>While browsers may not care what your code looks like (so long as it's valid), other developers do.  The way code looks is a big part of how we understand it.  How many times have you opened up code someone else wrote, and changed the indentation to match what you like, or gone through it and added white space/comments to help you understand, and be able to swiftly make changes throughout the code.  When everyone is writing code that looks different, each person needs to take more time to visually parse the code.  When code is clean and consistent, everyone can grasp, and work with it faster and easier.</p>
 
-                    <p>If you think of code as an actual language (human language, not computer language), you realize that you want to be able to speak this language in a way that others familiar with the language can easily understand.  When you write me an email, I should be able to read through it briefly and quickly ascertain the point.  Furthermore, if I forward that email to someone else, they should be able to do the same.</p>
+                    <p>If you think of code as an actual language (english, japanese, french etc.), you realize that you want to be able to speak/write this language in a way that others familiar with the language can easily understand.  When you write me an email, I should be able to read through it briefly and quickly ascertain the point.  Furthermore, if I forward that email to someone else, they should be able to do the same.  Our code needs to work the same way.</p>
 
                 </section>
 
@@ -77,52 +77,175 @@
 
                         <h3>Readabilty</h3>
 
-                        <p>Readability should take preference over file size.  Don't be afraid to use whitespace to separate code.  Our CI process will take care of minification and gzipping for all the files anyway.</p>
+                        <p>Readability should take preference over file size.  Don't be afraid to use whitespace to separate code.  Our continuous integration process will take care of minification and gzipping of all these files anyway.</p>
 
-                        <pre>
-                            &lt;nav&gt;
-                                &lt;ul&gt;
-                                    &lt;li&gt;&lt;a href="#general"&gt;&lt;img src="img/general.jpg" alt="General" /&gt;&lt;/a&gt;&lt;/li&gt;
-                                    &lt;li&gt;&lt;a href="#html"&gt;&lt;img src="img/html.jpg" alt="HTML" /&gt;&lt;/li&gt;
-                                    &lt;li&gt;&lt;a href="#css"&gt;&lt;img src="img/css.jpg" alt="CSS" /&gt;&lt;/a&gt;&lt;/li&gt;
-                                    &lt;li&gt;&lt;a href="#js"&gt;&lt;img src="img/js.jpg" alt="Javascript" /&gt;&lt;/a&gt;&lt;/li&gt;
-                                &lt;/ul&gt;
-                            &lt;/nav&gt;
-                        </pre>
+                        <ol class="codeBlock">
+                            <li>
+                                <code>
+                                    &lt;<span class="element">nav</span>&gt;
+                                </code>
+                            </li>
+                            <li>
+                                <code class="tab1">
+                                    &lt;<span class="element">ul</span>&gt;
+                                </code>
+                            </li>
+                            <li>
+                                <code class="tab2">
+                                    &lt;<span class="element">li</span>&gt;&lt;<span class="element">a <span class="attr">href</span><span class="equals">=</span><span class="attr">"#general"</span></span>&gt;&lt;<span class="element">img <span class="attr">src</span><span class="equals">=</span><span class="attr">"img/general.jpg"</span> <span class="attr">alt</span><span class="equals">=</span><span class="attr">"General"</span> </span>/&gt;&lt;/<span class="element">a</span>&gt;&lt;/<span class="element">li</span>&gt;
+                                </code>
+                            </li>
+                            <li>
+                                <code class="tab2">
+                                    &lt;<span class="element">li</span>&gt;&lt;<span class="element">a <span class="attr">href</span><span class="equals">=</span><span class="attr">"#html"</span></span>&gt;&lt;<span class="element">img <span class="attr">src</span><span class="equals">=</span><span class="attr">"img/html.jpg"</span> <span class="attr">alt</span><span class="equals">=</span><span class="attr">"HTML"</span> </span>/&gt;&lt;/<span class="element">li</span>&gt;
+                                </code>
+                            </li>
+                            <li>
+                                <code class="tab2">
+                                    &lt;<span class="element">li</span>&gt;&lt;<span class="element">a <span class="attr">href</span><span class="equals">=</span><span class="attr">"#css"</span></span>&gt;&lt;<span class="element">img <span class="attr">src</span><span class="equals">=</span><span class="attr">"img/css.jpg"</span> <span class="attr">alt</span><span class="equals">=</span><span class="attr">"CSS"</span> </span>/&gt;&lt;/<span class="element">a</span>&gt;&lt;/<span class="element">li</span>&gt;
+                                </code>
+                            </li>
+                            <li>
+                                <code class="tab2">
+                                    &lt;<span class="element">li</span>&gt;&lt;<span class="element">a <span class="attr">href</span><span class="equals">=</span><span class="attr">"#js"</span></span>&gt;&lt;<span class="element">img <span class="attr">src</span><span class="equals">=</span><span class="attr">"img/js.jpg"</span> <span class="attr">alt</span><span class="equals">=</span><span class="attr">"Javascript"</span> </span>/&gt;&lt;/<span class="element">a</span>&gt;&lt;/<span class="element">li</span>&gt;
+                                </code>
+                            </li>
+                            <li>
+                                <code class="tab1">
+                                    &lt;/<span class="element">ul</span>&gt;
+                                </code>
+                            </li>
+                            <li>
+                                <code>
+                                    &lt;/<span class="element">nav</span>&gt;
+                                </code>
+                            </li>
+                        </ol>
 
                         <p>Above is an example of how some whitespace could really help improve readability, and speed up debugging.  There is something missing in this html that's pretty hard to spot.</p>
 
-                        <pre>
-                            &lt;nav&gt;
-                                &lt;ul&gt;
-
-                                    &lt;li&gt;
-                                        &lt;a href="#general"&gt;
-                                            &lt;img src="img/general.jpg" alt="General" /&gt;
-                                        &lt;/a&gt;
-                                    &lt;/li&gt;
-
-                                    &lt;li&gt;
-                                        &lt;a href="#html"&gt;
-                                            &lt;img src="img/html.jpg" alt="HTML" /&gt;
-
-                                    &lt;/li&gt;
-
-                                    &lt;li&gt;
-                                        &lt;a href="#css"&gt;
-                                            &lt;img src="img/css.jpg" alt="CSS" /&gt;
-                                        &lt;/a&gt;
-                                    &lt;/li&gt;
-
-                                    &lt;li&gt;
-                                        &lt;a href="#js"&gt;
-                                            &lt;img src="img/js.jpg" alt="Javascript" /&gt;
-                                        &lt;/a&gt;
-                                    &lt;/li&gt;
-
-                                &lt;/ul&gt;
-                            &lt;/nav&gt;
-                        </pre>
+                        <ol class="codeBlock">
+                            <li>
+                                <code class="tab">
+                                    &lt;<span class="element">nav</span>&gt;
+                                </code>
+                            </li>
+                            <li>
+                                <code class="tab1">
+                                    &lt;<span class="element">ul</span>&gt;
+                                </code>
+                            </li>
+                            <li></li>
+                            <li>
+                                <code class="tab2">
+                                    &lt;<span class="element">li</span>&gt;
+                                </code>
+                            </li>
+                            <li>
+                                <code class="tab3">
+                                    &lt;<span class="element">a <span class="attr">href</span><span class="equals">=</span><span class="attr">"#general"</span></span>&gt;
+                                </code>
+                            </li>
+                            <li>
+                                <code class="tab4">
+                                    &lt;<span class="element">img <span class="attr">src</span><span class="equals">=</span><span class="attr">"img/general.jpg"</span> <span class="attr">alt</span><span class="equals">=</span><span class="attr">"General"</span></span>/&gt;
+                                </code>
+                            </li>
+                            <li>
+                                <code class="tab3">
+                                    &lt;/<span class="element">a</span>&gt;
+                                </code>
+                            </li>
+                            <li>
+                                <code class="tab2">
+                                    &lt;/<span class="element">li</span>&gt;
+                                </code>
+                            </li>
+                            <li></li>
+                            <li>
+                                <code class="tab2">
+                                    &lt;<span class="element">li</span>&gt;
+                                </code>
+                            </li>
+                            <li>
+                                <code class="tab3">
+                                    &lt;<span class="element">a <span class="attr">href</span><span class="equals">=</span><span class="attr">"#html"</span></span>&gt;
+                                </code>
+                            </li>
+                            <li>
+                                <code class="tab4">
+                                    &lt;<span class="element">img <span class="attr">src</span><span class="equals">=</span><span class="attr">"img/html.jpg"</span> <span class="attr">alt</span><span class="equals">=</span><span class="attr">"HTML"</span></span>/&gt;
+                                </code>
+                            </li>
+                            <li>
+                                <code class="tab2">
+                                    &lt;/<span class="element">li</span>&gt;
+                                </code>
+                            </li>
+                            <li></li>
+                            <li>
+                                <code class="tab2">
+                                    &lt;<span class="element">li</span>&gt;
+                                </code>
+                            </li>
+                            <li>
+                                <code class="tab3">
+                                    &lt;<span class="element">a <span class="attr">href</span><span class="equals">=</span><span class="attr">"#css"</span></span>&gt;
+                                </code>
+                            </li>
+                            <li>
+                                <code class="tab4">
+                                    &lt;<span class="element">img <span class="attr">src</span><span class="equals">=</span><span class="attr">"img/css.jpg"</span> <span class="attr">alt</span><span class="equals">=</span><span class="attr">"CSS"</span></span>/&gt;
+                                </code>
+                            </li>
+                            <li>
+                                <code class="tab3">
+                                    &lt;/<span class="element">a</span>&gt;
+                                </code>
+                            </li>
+                            <li>
+                                <code class="tab2">
+                                    &lt;/<span class="element">li</span>&gt;
+                                </code>
+                            </li>
+                            <li></li>
+                            <li>
+                                <code class="tab2">
+                                    &lt;<span class="element">li</span>&gt;
+                                </code>
+                            </li>
+                            <li>
+                                <code class="tab3">
+                                    &lt;<span class="element">a <span class="attr">href</span><span class="equals">=</span><span class="attr">"#js"</span></span>&gt;
+                                </code>
+                            </li>
+                            <li>
+                                <code class="tab4">
+                                    &lt;<span class="element">img <span class="attr">src</span><span class="equals">=</span><span class="attr">"img/js.jpg"</span> <span class="attr">alt</span><span class="equals">=</span><span class="attr">"Javascript"</span></span>/&gt;
+                                </code>
+                            </li>
+                            <li>
+                                <code class="tab3">
+                                    &lt;/<span class="element">a</span>&gt;
+                                </code>
+                            </li>
+                            <li>
+                                <code class="tab2">
+                                    &lt;/<span class="element">li</span>&gt;
+                                </code>
+                            </li>
+                            <li></li>
+                            <li>
+                                <code class="tab1">
+                                    &lt;/<span class="element">ul</span>&gt;
+                                </code>
+                            </li>
+                            <li>
+                                <code class="tab">
+                                    &lt;/<span class="element">nav</span>&gt;
+                                </code>
+                            </li>
+                        </ol>
 
                         <p>Now that each individual item is separated, it's much easier to see what's going on.  This kind of spacing can be helpful for finding missing closing tags, or catching them before they occur.</p>
 
@@ -134,54 +257,188 @@
 
                         <p>Comments are an important way help separate chunks of code and explain any functionality that wouldn't be quickly discernable to other devs.</p>
 
-                        <pre>
-                            var count = parseInt(currNum) + 1;
-
-                            function timer() {
-                              count = count - 1;
-                              if ( count &lt;= 0 ) {
-                                 clearInterval(counter);
-                                 return;
-                              }
-                              currNum &gt; 500 ? startCount += 10 : startCount += 1;
-                              tooltipEl.children('.tooltip-inner').html(startCount);
-                            };
-
-                            var counter = setInterval(timer, (700 / currNum));
-                        </pre>
+                        <ol class="codeBlock">
+                            <li>
+                                <code>
+                                    <span class="var">var</span> count <span class="condition">=</span> <span class="methodCall">parseInt</span>(currNum) <span class="condition">+</span> <span class="integer">1</span>;
+                                </code>
+                            </li>
+                            <li></li>
+                            <li>
+                                <code>
+                                    function <span class="functionName">timer</span>() {
+                                </code>
+                            </li>
+                            <li>
+                                <code class="tab1">
+                                    count <span class="condition">=</span> count <span class="condition">-</span> <span class="integer">1</span>;
+                                </code>
+                            </li>
+                            <li>
+                                <code class="tab1">
+                                    <span class="condition">if</span> ( count <span class="condition">&lt;=</span> <span class="integer">0</span> ) {
+                                </code>
+                            </li>
+                            <li>
+                                <code class="tab2">
+                                    <span class="methodCall">clearInterval</span>(counter);
+                                </code>
+                            </li>
+                            <li>
+                                <code class="tab2">
+                                    <span class="condition">return;</span>
+                                </code>
+                            </li>
+                            <li>
+                                <code class="tab1">
+                                }
+                            </code>
+                        </li>
+                            <li>
+                                <code class="tab1">
+                                    currNum <span class="condition">&gt;</span> <span class="integer">500</span> ? startCount <span class="condition">+=</span> <span class="integer">10</span> : startCount <span class="condition">+=</span> <span class="integer">1</span>;
+                                </code>
+                            </li>
+                            <li>
+                                <code class="tab1">
+                                    tooltipEl.children(<span class="selector">'.tooltip-inner'</span>).html(startCount);
+                                </code>
+                            </li>
+                            <li>
+                                <code>
+                                    };
+                                </code>
+                            </li>
+                            <li></li>
+                            <li>
+                                <code>
+                                    <span class="var">var</span> counter <span class="condition">=</span> <span class="methodCall">setInterval</span>(timer, (<span class="integer">700</span> <span class="condition">/</span> currNum));
+                                </code>
+                            </li>
+                        </ol>
 
                         <p>Above is an example of code that would be much easier to understand what's going on with a few comments.</p>
 
-                        <pre>
-                            //Set up count to be users current sessions attended
-                            //Add 1 so when this zero's out it will be at the correct number
-                            var count = parseInt(currNum) + 1;
-
-                            //timer function to make the tooltip count up on page load
-                            function timer() {
-                              //On each cycle subtract 1 from the count
-                              count = count - 1;
-                              //if the count is at zero stop the counter
-                              if ( count <= 0 ) {
-
-                                 clearInterval(counter);
-                                 return;
-
-                              }
-                              //Check if the number of attended sessions is over 500
-                              //If it is count up by 10 on each cycle so it doesn't take forever
-                              //otherwise count up by 1 on each cycle
-                              currNum > 500 ? startCount += 10 : startCount += 1;
-                              //Put the new number in the tooltip
-                              tooltipEl.children('.tooltip-inner').html(startCount);
-                            };
-
-                            //start the counter with setInterval
-                            //the animation of the progress bar takes 700ms
-                            //in order to sync the tooltip counting with this divide the animation time by the number it must count to
-                            //if 10 sessions were attended this will call timer every (700/10) 70ms until the count reach's zero
-                            var counter = setInterval(timer, (700 / currNum));
-                        </pre>
+                        <ol class="codeBlock">
+                            <li>
+                                <code>
+                                    <span class="comment">//Set up count to be users current sessions attended</span>
+                                </code>
+                            </li>
+                            <li>
+                                <code>
+                                    <span class="comment">//Add 1 so when this zero's out it will be at the correct number</span>
+                                </code>
+                            </li>
+                            <li>
+                                <code>
+                                    <span class="var">var</span> count <span class="condition">=</span> <span class="methodCall">parseInt</span>(currNum) <span class="condition">+</span> <span class="integer">1</span>;
+                                </code>
+                            </li>
+                            <li></li>
+                            <li>
+                                <code>
+                                    <span class="comment">//timer function to make the tooltip count up on page load</span>
+                                </code>
+                            </li>
+                            <li>
+                                <code>
+                                    function <span class="functionName">timer</span>() {
+                                </code>
+                            </li>
+                            <li>
+                                <code class="tab1">
+                                    <span class="comment">//On each cycle subtract 1 from the count</span>
+                                </code>
+                            </li>
+                            <li>
+                                <code class="tab1">
+                                    count <span class="condition">=</span> count <span class="condition">-</span> <span class="integer">1</span>;
+                                </code>
+                            </li>
+                            <li>
+                                <li>
+                                <code class="tab1">
+                                    <span class="comment">//if the count is at zero stop the counter</span>
+                                </code>
+                            </li>
+                            <li>
+                                <code class="tab1">
+                                    <span class="condition">if</span> ( count <span class="condition">&lt;=</span> <span class="integer">0</span> ) {
+                                </code>
+                            </li>
+                            <li>
+                                <code class="tab2">
+                                    <span class="methodCall">clearInterval</span>(counter);
+                                </code>
+                            </li>
+                            <li>
+                                <code class="tab2">
+                                    <span class="condition">return;</span>
+                                </code>
+                            </li>
+                            <li>
+                                <code class="tab1">
+                                    }
+                                </code>
+                            </li>
+                            <li>
+                                <code class="tab1">
+                                    <span class="comment">//Check if the number of attended sessions is over 500</span>
+                                </code>
+                            </li>
+                            <li>
+                                <code class="tab1">
+                                    <span class="comment">//If it is count up by 10 on each cycle so it doesn't take forever</span>
+                                </code>
+                            </li>
+                            <li>
+                                <code class="tab1">
+                                    <span class="comment">//otherwise count up by 1 on each cycle</span>
+                                </code>
+                            </li>
+                            <li>
+                                <code class="tab1">
+                                    currNum <span class="condition">&gt;</span> <span class="integer">500</span> ? startCount <span class="condition">+=</span> <span class="integer">10</span> : startCount <span class="condition">+=</span> <span class="integer">1</span>;
+                                </code>
+                            </li>
+                            <li>
+                                <code class="tab1">
+                                    <span class="comment">//Put the new number in the tooltip</span>
+                                </code>
+                            </li>
+                            <li>
+                                <code class="tab1">
+                                    tooltipEl.children(<span class="selector">'.tooltip-inner'</span>).html(startCount);
+                                </code>
+                            </li>
+                            <li>
+                                <code>
+                                    };
+                                </code>
+                            </li>
+                            <li></li>
+                            <li>
+                                <code>
+                                    <span class="comment">//start the counter with setInterval, the animation of the progress bar takes 700ms</span>
+                                </code>
+                            </li>
+                            <li>
+                                <code>
+                                    <span class="comment">//in order to sync the tooltip counting with this divide the animation time by the number it must count to</span>
+                                </code>
+                            </li>
+                            <li>
+                                <code>
+                                    <span class="comment">//if 10 sessions were attended this will call timer every (700/10) 70ms until the count reach's zero</span>
+                                </code>
+                            </li>
+                            <li>
+                                <code>
+                                    <span class="var">var</span> counter <span class="condition">=</span> <span class="methodCall">setInterval</span>(timer, (<span class="integer">700</span> <span class="condition">/</span> currNum));
+                                </code>
+                            </li>
+                        </ol>
 
                         <p>These comments make it a lot more clear what's happening here.  Instead of a random timer function in the middle of the code, I now know this is used to update the tooltip when the page loads and I have some idea of how it works.  If I was debugging something with the tooltip updating incorrectly this would save me a lot of time.</p>
 
@@ -205,9 +462,17 @@
 
                     <section class="subSection">
 
+                        <h3>Express concerns on performance issues early</h3>
+
+                        <p>As a front end developer it's your job to communicate any performance issues you see which may arise from different interactive features or pretty visuals.  Explain what the issues are in as much detail as you can and, provide alternative solutions.  Doing this as early as possible prevents us from losign time when we discover this issue after we're done building.</p>
+
+                    </section>
+
+                    <section class="subSection">
+
                         <h3>Cross Browser Compatibility</h3>
 
-                        <p>At IIN we support chrome, safari, opera, firefox, and IE 8+.  Please check your code in all of these browsers before passing it to QA.  While we don't explicitly support IE 7, make sure your code is not completely unusable in IE 7.</p>
+                        <p>At IIN we support mobile, chrome, safari, opera, firefox, and IE 8+.  Please check your code in all of these browsers before passing it to QA.  While we don't explicitly support IE 7, make sure your code functions reasonably in IE 7.</p>
 
                     </section>
 
@@ -355,6 +620,8 @@
 
                     <p>CSS, enter the presentation layer.  CSS, not only does it make our sites look great, it's also daunting/confusing enough to back end developers to prevent them from doing our job.</p>
 
+                    <p>As CSS is the presentation layer, your HTML should be coded in such a manner that it's not dependant on CSS.  The CSS is meant to make the information you're trying to share with your HTML pretty.   All of your content needs to be comprehensible even with CSS disabled.</p>
+
                     <section class="subSection">
 
                         <h3>CSS Style Guide</h3>
@@ -477,7 +744,6 @@
                             -ms-transition: all 4s ease;
                             -o-transition: all 4s ease;
                             transition: all 4s ease;
-
                         </pre>
 
                         <p>Here are a couple helpful tools, which generate the CSS with all the necessary prefix's</p>
@@ -535,13 +801,15 @@
 
                     <p>Don't call me Java bro.</p>
 
+                    <p>Javascript is used to add functionality and different interactions to/with your content.  In the same way that your HTML needs to not be CSS dependant, it also needs to not rely on your javascript to display the content.</p>
+
                     <section class="subSection">
 
                         <h3>Javascript style guide</h3>
 
                         <p>For the last time, white space is your friend, comments are your best friend.  Comments are especially important with javascript, a function that's using a closure and referencing variables from 1500-3000 lines up can take a fair bit of time to figure out.</p>
 
-                        <p>To quote Douglas Crockford "Javascript's loose typing and excessive error tolerance provide little compile-time assurance of our program's qulity, so to compensate, we should code with strict discipline."  With that, here is what javascript should look like.</p>
+                        <p>To quote Douglas Crockford "Javascript's loose typing and excessive error tolerance provide little compile-time assurance of our program's quality, so to compensate, we should code with strict discipline."  With that, here is what javascript should look like.</p>
 
                         <pre>
 
@@ -550,7 +818,7 @@
                             var correspondingNav = $('[data-boxNum="' + pressedButtonNum + '"]');
 
 
-                            //Switch for action taken (tap nav, tap answer, or swip)
+                            //Switch for action taken (tap nav, tap answer, or swipe)
                             switch ( type ) {
                               //answered yes
                               case 'answeryes' :
@@ -596,6 +864,10 @@
                         <p>All of your js should be housed in exteranl javascript files, which should be placed right before the closing body tag for performance.</p>
 
                         <p>As with HTML, always try to class/method/function/variable names sensible.  If you have a modal window for sign in, call it "signInModal" oppose to "theModal".</p>
+
+                        <h4>DRY or Don't Repeat Yourself</h4>
+
+                        <p>Always try and make functions which can be reused and are generalized.  A few good ways to do this are to use parameters, closures, and return values.  So if you're working on something which you think may be reused later, like a gallery, instead of hard coding it's width, photos, methods of switching photos write a function which takes parameters for all of these things.  This can greatly reduce code overhead.</p>
 
                     </section>
 
@@ -645,6 +917,141 @@
                             '1' + 3 + 'cat' //"13cat"
                             'cat' + 10 + 30 //"cat1030"
                         </pre>
+
+                    </section>
+
+                    <section class="subSection">
+
+                        <h3>Semicolon Insertion</h3>
+
+                        <p>Javascript attempts to fix broken code by automatically inserting semicolons, where it thinks they should go.  This can be problematic and should be avoided.  Semicolons are to explicitly be put at the end of functions, method calls, breaks, and return statements.</p>
+
+                        <pre>
+                            return
+                            {
+                                name : 'joe'
+                            }
+                        </pre>
+
+                        <p>The above code looks as if it should return an object with a name member.  However due to an automatic placement of a semicolon on the return, the function drops out there and nothing is returned.  As such no bugs are thrown and this bug is a mystery.  This can be avoided by putting the opening { on the same line as the return.</p>
+
+                        <pre>
+                            return {
+                                name : 'joe'
+                            }
+                        </pre>
+
+                    </section>
+
+                    <section class="subSection">
+
+                        <h3>For loops, if statements, switch, while loops</h3>
+
+                        <p>All of your block conditionals and loops should be done in this format.</p>
+
+                        <pre>
+                            for ( var i = 0, t = that.length; i < t; i++ ) {
+
+                                var thisEl = that[t];
+
+                                if ( thisEl.id == 'elImLookingFor' ) {
+
+                                    //Get elements height, split the string, removing px
+                                    //Parse the string to an integer, add 100 use coercion to conver back to string with px on the end and set the height
+                                    thisEl.style.height = parseInt(thisEl.style.height.split('px')[0]) + 100 + 'px';
+
+                                }
+
+                            }
+                        </pre>
+
+                        <p>Please use the extra spaces in between the parens which contain the conditions.  For and While loops should have their iterators ( var i = 0 ) declared as local variables oppose to global variables ( i = 0 ).</p>
+
+                        <p>An if statement which only has a single line inside it doesn't need to use curly brackets.  However, it's not very costly to add them and,  it can help prevent missing things like this.</p>
+
+                        <pre>
+                            if ( that.length )
+                                doThis();
+                                andThat();
+                        </pre>
+
+                        <p>This looks like.</p>
+
+                        <pre>
+                            if ( that.length ) {
+                                doThis();
+                                andThat();
+                            }
+                        </pre>
+
+                        <p>It actually means this.</p>
+
+                        <pre>
+                            if ( that.length ) {
+                                doThis();
+                            }
+                            andThat();
+                        </pre>
+
+                        <p>This can be a difficult to spot.</p>
+
+                        <p>Be certain to never let your switch cases fall through by forgetting to add breaks.</p>
+
+                        <pre>
+                            switch (expression) {
+
+                               case label1:
+                                  statements1
+                                  break;
+
+                               case label2:
+                                  statements2
+                                  break;
+
+                               case labelN:
+                                  statementsN
+                                  break;
+
+                               default:
+                                  statements_def
+                                  break;
+
+                            }
+                        </pre>
+
+                    </section>
+
+                    <section class="subSection">
+
+                        <h3>Feature Detection</h3>
+
+                        <p>Do not rely on the user agent string, or browser sniffing to determine browser.  Use feature detection.</p>
+
+                        <p>See <a href="http://diveintohtml5.info/detect.html">this</a> and <a href="http://blogs.msdn.com/b/thebeebs/archive/2012/01/25/how-to-write-a-feature-detection-script-in-javascript.aspx">this.</a></p>
+
+                    </section>
+
+                    <section class="subSection">
+
+                        <h4>Overview</h4>
+
+                        <ul>
+
+                            <li>Avoid global variables.</li>
+
+                            <li>Use the module pattern.</li>
+
+                            <li>Be wary of automatic semi colon insertion and coercion.</li>
+
+                            <li>Use === avoid ==</li>
+
+                            <li>Lots of comments.</li>
+
+                            <li>Avoid ternary operators.</li>
+
+                            <li>Use feature detection.</li>
+
+                        </ul>
 
                     </section>
 

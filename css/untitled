@@ -1,0 +1,124 @@
+                        <ol class="codeBlock">
+                            <li>
+                                <code>
+                                    <span class="comment">//Set up count to be users current sessions attended</span>
+                                </code>
+                            </li>
+                            <li>
+                                <code>
+                                    <span class="comment">//Add 1 so when this zero's out it will be at the correct number</span>
+                                </code>
+                            </li>
+                            <li>
+                                <code>
+                                    <span class="var">var</span> count <span class="condition">=</span> <span class="methodCall">parseInt</span>(currNum) <span class="condition">+</span> <span class="integer">1</span>;
+                                </code>
+                            </li>
+                            <li></li>
+                            <li>
+                                <code>
+                                    <span class="comment">//Set up count to be users current sessions attended</span>
+                                </code>
+                            </li>
+                            <li>
+                                <code>
+                                    function <span class="functionName">timer</span>() {
+                                </code>
+                            </li>
+                            <li>
+                                <code>
+                                    <span class="comment">//Set up count to be users current sessions attended</span>
+                                </code>
+                            </li>
+                            <li>
+                                <code class="tab1">
+                                    count <span class="condition">=</span> count <span class="condition">-</span> <span class="integer">1</span>;
+                                </code>
+                            </li>
+                            <li>
+                                <li>
+                                <code>
+                                    <span class="comment">//Set up count to be users current sessions attended</span>
+                                </code>
+                            </li>
+                                <code class="tab1">
+                                    <span class="condition">if</span> ( count <span class="condition">&lt;=</span> <span class="integer">0</span> ) {
+                                </code>
+                            </li>
+                            <li>
+                                <code class="tab2">
+                                    <span class="methodCall">clearInterval</span>(counter);
+                                </code>
+                            </li>
+                            <li>
+                                <code class="tab2">
+                                    <span class="condition">return;</span>
+                                </code>
+                            </li>
+                            <li>
+                                <code class="tab1">
+                                    }
+                                </code>
+                            </li>
+                            <li>
+                                <code>
+                                    <span class="comment">//Set up count to be users current sessions attended</span>
+                                </code>
+                            </li>
+                            <li>
+                                <code>
+                                    <span class="comment">//Set up count to be users current sessions attended</span>
+                                </code>
+                            </li>
+                            <li>
+                                <code>
+                                    <span class="comment">//Set up count to be users current sessions attended</span>
+                                </code>
+                            </li>
+                            <li>
+                                <code class="tab1">
+                                    currNum <span class="condition">&gt;</span> <span class="integer">500</span> ? startCount <span class="condition">+=</span> <span class="integer">10</span> : startCount <span class="condition">+=</span> <span class="integer">1</span>;
+                                </code>
+                            </li>
+                            <li>
+                                <code>
+                                    <span class="comment">//Set up count to be users current sessions attended</span>
+                                </code>
+                            </li>
+                            <li>
+                                <code class="tab1">
+                                    tooltipEl.children(<span class="selector">'.tooltip-inner'</span>).html(startCount);
+                                </code>
+                            </li>
+                            <li>
+                                <code>
+                                    };
+                                </code>
+                            </li>
+                            <li></li>
+                            <li>
+                                <code>
+                                    <span class="comment">//start the counter with setInterval</span>
+                                </code>
+                            </li>
+                            <li>
+                                <code>
+                                    <span class="comment">//the animation of the progress bar takes 700ms</span>
+                                </code>
+                            </li>
+                            <li>
+                                <code>
+                                    <span class="comment">//in order to sync the tooltip counting with this divide the animation time by the number it must count to</span>
+                                </code>
+                            </li>
+                            <li>
+                                <code>
+                                    <span class="comment">//if 10 sessions were attended this will call timer every (700/10) 70ms until the count reach's zero</span>
+                                </code>
+                            </li>
+                            <li>
+                                <code>
+                                    <span class="var">var</span> counter <span class="condition">=</span> <span class="methodCall">setInterval</span>(timer, (<span class="integer">700</span> <span class="condition">/</span> currNum));
+                                </code>
+                            </li>
+                        </ol>
