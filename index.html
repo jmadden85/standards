@@ -266,7 +266,7 @@
                             <li></li>
                             <li>
                                 <code>
-                                    function <span class="functionName">timer</span>() {
+                                    <span class="var">function</span> <span class="functionName">timer</span>() {
                                 </code>
                             </li>
                             <li>
@@ -343,7 +343,7 @@
                             </li>
                             <li>
                                 <code>
-                                    function <span class="functionName">timer</span>() {
+                                    <span class="var">function</span> <span class="functionName">timer</span>() {
                                 </code>
                             </li>
                             <li>
@@ -502,25 +502,55 @@
 
                         <p>As mentioned before, do not fear the white space.  Comments are your friends.  Along with the 4 spaces soft tabbing, markup should look like this.</p>
 
-                        <pre>
-                            &lt;section class="subSection"&gt;
-
-                                &lt;h3&gt;Indentation&lt;/h3&gt;
-
-                                &lt;p&gt;For all code languages, we require indentation to be done via soft tabs (using the space character). Hitting Tab in your text editor needs to be equivalent to
-                                four spaces.&lt;/p&gt;
-
-                            &lt;/section&gt;
-
-                            &lt;section class="subSection"&gt;
-
-                                &lt;h3&gt;Naming Conventions&lt;/h3&gt;
-
-                                &lt;p&gt;For all class names, ids, and function names you should use camelCase.  i.e. the-frog should be theFrog, or this_id should be thisId, or stop-showing-this-stuff-to-me
-                                 should be stopShowingThisStuffToMe&lt;/p&gt;
-
-                            &lt;/section&gt;
-                        </pre>
+                        <ol class="codeBlock">
+                            <li>
+                                <code>
+                                    &lt;<span class="element">section <span class="attr">class</span><span class="equals">=</span><span class="attr">"subSection"</span></span>&gt;
+                                </code>
+                            </li>
+                            <li></li>
+                            <li>
+                                <code class="tab1">
+                                    &lt;<span class="element">h3</span>&gt;Indentation&lt;/<span class="element">h3</span>&gt;
+                                </code>
+                            </li>
+                            <li></li>
+                            <li>
+                                <code class="tab1">
+                                    &lt;<span class="element">p</span>&gt;For all code languages, we require indentation to be done via soft tabs (using the space character). Hitting Tab in your text editor needs to be equivalent to four spaces.&lt;/<span class="element">p</span>&gt;
+                                </code>
+                            </li>
+                            <li></li>
+                            <li>
+                                <code>
+                                    &lt;/<span class="element">section</span>&gt;
+                                </code>
+                            </li>
+                            <li></li>
+                            <li>
+                                <code>
+                                    &lt;<span class="element">section <span class="attr">class</span><span class="equals">=</span><span class="attr">"subSection"</span></span>&gt;
+                                </code>
+                            </li>
+                            <li></li>
+                            <li>
+                                <code class="tab1">
+                                    &lt;<span class="element">h3</span>&gt;Naming Conventions&lt;/<span class="element">h3</span>&gt;
+                                </code>
+                            </li>
+                            <li></li>
+                            <li>
+                                <code class="tab1">
+                                    &lt;<span class="element">p</span>&gt;For all class names, ids, and function names you should use camelCase.  i.e. the-frog should be theFrog, or this_id should be thisId, or stop-showing-this-stuff-to-me should be stopShowingThisStuffToMe&lt;/<span class="element">p</span>&gt;
+                                </code>
+                            </li>
+                            <li></li>
+                            <li>
+                                <code>
+                                    &lt;/<span class="element">section</span>&gt;
+                                </code>
+                            </li>
+                        </ol>
 
                     </section>
 
@@ -532,23 +562,35 @@
 
                         <p>Ideally we'll be able to use the HTML5 specification of the doctype.</p>
 
-                        <pre>
-                            &lt;!DOCTYPE html&gt;
-                        </pre>
+                        <ol class="codeBlock">
+                            <li>
+                                <code>
+                                    &lt;!DOCTYPE html&gt;
+                                </code>
+                            </li>
+                        </ol>
 
                         <p>Markup should all be delivered as UTF-8, it's the most internationally compatible form.</p>
 
                         <p>Old school (pre HTML5) method</p>
 
-                        <pre>
-                            &lt;meta http-equiv="Content-Type" content="text/html; charset=UTF-8" /&gt;
-                        </pre>
+                        <ol class="codeBlock">
+                            <li>
+                                <code>
+                                    &lt;<span class="element">meta <span class="attr">http-equiv</span><span class="equals">=</span><span class="attr">"Content-Type"</span> <span class="attr">content</span><span class="equals">=</span><span class="attr">"text/html; charset=UTF-8"</span> </span>/&gt;
+                                </code>
+                            </li>
+                        </ol>
 
                         <p>HTML5, making things simple</p>
 
-                        <pre>
-                            &lt;meta charset=utf-8" /&gt;
-                        </pre>
+                        <ol class="codeBlock">
+                            <li>
+                                <code>
+                                    &lt;<span class="element">meta <span class="attr">charset</span><span class="equals">=</span><span class="attr">utf-8"</span> </span>/&gt;
+                                </code>
+                            </li>
+                        </ol>
 
                     </section>
 
@@ -570,15 +612,43 @@
 
                             <li>When creating attributes which are specifically used for functionality (Javascript, or backend tasks) use the data- format</li>
 
-                            <pre>
-                                &lt;span data-postedBy="bob"&gt;This document is too large&lt;/span&gt;
+                            <ol class="codeBlock">
+                                <li>
+                                    <code>
+                                        &lt;<span class="element">span <span class="attr">data-postedBy</span><span class="equals">=</span><span class="attr">"bob"</span></span>&gt;This document is too large&lt;/<span class="element">span</span>&gt;
+                                    </code>
+                                </li>
+                                <li>
+                                    <code>
 
-                                function hidePostsIDontLike(name) {
-                                    var postsToHide = $("[data-postedBy=" + name " + ]");
-                                    postsToHide.hide(0);
-                                };
-                                hidePostsIDontLike("bob");
-                            </pre>
+                                    </code>
+                                </li>
+                                <li>
+                                    <code>
+                                        <span class="var">function</span> <span class="functionName">hidePostsIDontLike</span>(<span class="parameter">name</span>) {
+                                    </code>
+                                </li>
+                                <li>
+                                    <code class="tab1">
+                                        <span class="var">var</span> postsToHide = $(<span class="selector">"[data-postedBy="</span> <span class="condition">+</span> name <span class="condition">+</span> <span class="selector">"]"</span>);
+                                    </code>
+                                </li>
+                                <li>
+                                    <code class="tab1">
+                                        postsToHide.hide(<span class="integer">0</span>);
+                                    </code>
+                                </li>
+                                <li>
+                                    <code>
+                                    };
+                                    </code>
+                                </li>
+                                <li>
+                                    <code>
+                                        hidePostsIDontLike(<span class="selector">"bob"</span>);
+                                    </code>
+                                </li>
+                            </ol>
 
                             <li>Inline styles are to be avoided, use a CSS file.</li>
 
@@ -588,9 +658,13 @@
 
                             <li>Use the meta viewport tag, very important to mobile friendliness.</li>
 
-                            <pre>
-                                &lt;meta name="viewport" content="width=device-width"&gt;
-                            </pre>
+                            <ol class="codeBlock">
+                                <li>
+                                    <code>
+                                        &lt;<span class="element">meta</span> <span class="attr">name</span><span class="equals">=</span><span class="attr">"viewport" content</span><span class="equals">=</span><span class="attr">"width=device-width"</span>&gt;
+                                    </code>
+                                </li>
+                            </ol>
 
                             <li>With large chunks of HTML inside of an element it can be helpful to use a comment on the closing tag to indicate what element you're closing.</li>
 
@@ -628,46 +702,198 @@
 
                         <p>As mentioned twice before, do not fear the white space.  Comments are your friends.  Along with the 4 spaces soft tabbing, CSS should look like this.</p>
 
-                        <pre>
-                            /* ==========================================================================
-                               Nav Styles
-                                ========================================================================== */
+                        <ol class="codeBlock">
+                            <li>
+                                <code class="tab">
+                                    /* ==========================================================================
+                                </code>
+                            </li>
+                            <li>
+                                <code class="tab1">
+                                    Nav Styles
+                                </code>
+                            </li>
+                            <li>
+                                <code class="tab1">
+                                    ========================================================================== */
+                                </code>
+                            </li>
+                            <li>
+                                <code class="tab">
 
-                            nav {
-                                width:67%;
-                                margin:0 auto;
-                            }
+                                </code>
+                            </li>
+                            <li>
+                                <code class="tab">
+                                    <span class="cssEl">nav</span> {
+                                </code>
+                            </li>
+                            <li>
+                                <code class="tab1">
+                                    <span class="css">width</span>:<span class="css">67<span class="condition">%</span></span>;
+                                </code>
+                            </li>
+                            <li>
+                                <code class="tab1">
+                                    <span class="css">margin</span>:<span class="css">0 auto</span>;
+                                </code>
+                            </li>
+                            <li>
+                                <code class="tab">
+                                }
+                                </code>
+                            </li>
+                            <li>
+                                <code class="tab">
 
-                            nav li {
-                                float:left;
-                                width:20%;
-                            }
+                                </code>
+                            </li>
+                            <li>
+                                <code class="tab">
+                                    <span class="cssEl">nav li</span> {
+                                </code>
+                            </li>
+                            <li>
+                                <code class="tab1">
+                                    <span class="css">float</span>:<span class="css">left</span>;
+                                </code>
+                            </li>
+                            <li>
+                                <code class="tab1">
+                                    <span class="css">width</span>:<span class="css">20%</span>;
+                                </code>
+                            </li>
+                            <li>
+                                <code class="tab">
+                                }
+                                </code>
+                            </li>
+                            <li>
+                                <code class="tab">
 
-                            nav ul {
-                                padding:0;
-                                margin:0;
-                            }
+                                </code>
+                            </li>
+                            <li>
+                                <code class="tab">
+                                    <span class="cssEl">nav ul</span> {
+                                </code>
+                            </li>
+                            <li>
+                                <code class="tab1">
+                                    <span class="css">padding</span>:<span class="css">0</span>;
+                                </code>
+                            </li>
+                            <li>
+                                <code class="tab1">
+                                    <span class="css">margin</span>:<span class="css">0</span>;
+                                </code>
+                            </li>
+                            <li>
+                                <code class="tab">
+                                }
+                                </code>
+                            </li>
+                            <li>
+                                <code class="tab">
 
-                            nav li a {
-                                color:#fff;
-                                text-decoration:none;
-                                font-size:1.8em;
-                                font-weight:bold;
-                                text-transform:uppercase;
-                                display:block;
-                                height:45px;
-                                width:50%;
-                                padding:20px 0 0;
-                                text-align:center;
-                            }
+                                </code>
+                            </li>
+                            <li>
+                                <code class="tab">
+                                    <span class="cssEl">nav li a</span> {
+                                </code>
+                            </li>
+                            <li>
+                                <code class="tab1">
+                                    <span class="css">color</span>:<span class="css">#fff</span>;
+                                </code>
+                            </li>
+                            <li>
+                                <code class="tab1">
+                                    <span class="css">text-decoration</span>:<span class="css">none</span>;
+                                </code>
+                            </li>
+                            <li>
+                                <code class="tab1">
+                                    <span class="css">font-size</span>:<span class="css">1.8<span class="condition">em</span></span>;
+                                </code>
+                            </li>
+                            <li>
+                                <code class="tab1">
+                                    <span class="css">font-weight</span>:<span class="css">bold</span>;
+                                </code>
+                            </li>
+                            <li>
+                                <code class="tab1">
+                                    <span class="css">text-transform</span>:<span class="css">uppercase</span>;
+                                </code>
+                            </li>
+                            <li>
+                                <code class="tab1">
+                                    <span class="css">display</span>:<span class="css">block</span>;
+                                </code>
+                            </li>
+                            <li>
+                                <code class="tab1">
+                                    <span class="css">height</span>:<span class="css">45<span class="condition">px</span></span>;
+                                </code>
+                            </li>
+                            <li>
+                                <code class="tab1">
+                                    <span class="css">width</span>:<span class="css">50<span class="condition">%</span></span>;
+                                </code>
+                            </li>
+                            <li>
+                                <code class="tab1">
+                                    <span class="css">padding</span>:<span class="css">20<span class="condition">px</span> 0 0</span>;
+                                </code>
+                            </li>
+                            <li>
+                                <code class="tab1">
+                                    <span class="css">text-align</span>:<span class="css">center</span>;
+                                </code>
+                            </li>
+                            <li>
+                                <code class="tab">
+                                }
+                                </code>
+                            </li>
+                            <li>
+                                <code class="tab">
 
-                            nav li a:hover {
-                                color:#ccc;
-                                -webkit-transition: color .15s linear .1s;
-                                -moz-transition: color .15s linear .1s;
-                                transition: color .15s linear .1s;
-                            }
-                        </pre>
+                                </code>
+                            </li>
+                            <li>
+                                <code class="tab">
+                                    <span class="cssEl">nav li a</span>:<span class="css">hover </span>{
+                                </code>
+                            </li>
+                            <li>
+                                <code class="tab1">
+                                    <span class="css">color</span>:<span class="css">#ccc</span>;
+                                </code>
+                            </li>
+                            <li>
+                                <code class="tab1">
+                                    <span class="css">-webkit-transition</span>: color <span class="css">.15</span><span class="condition">s</span> linear <span class="css">.1</span><span class="condition">s</span>;
+                                </code>
+                            </li>
+                            <li>
+                                <code class="tab1">
+                                    <span class="css">-moz-transition</span>: color <span class="css">.15</span><span class="condition">s</span> linear <span class="css">.1</span><span class="condition">s</span>;
+                                </code>
+                            </li>
+                            <li>
+                                <code class="tab1">
+                                    <span class="css">transition</span>: color <span class="css">.15</span><span class="condition">s</span> linear <span class="css">.1</span><span class="condition">s</span></span>;
+                                </code>
+                            </li>
+                            <li>
+                                <code class="tab">
+                                }
+                                </code>
+                            </li>
+                        </ol>
 
                     </section>
 

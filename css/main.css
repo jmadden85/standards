@@ -277,10 +277,15 @@ pre {
     padding:8px 8px 8px 40px;
     overflow:auto;
     white-space:nowrap;
+    color:#ccc;
 }
 
 .codeBlock .element {
     color:#f9276c;
+}
+
+.codeBlock .css {
+    color:#66d9ef;
 }
 
 .codeBlock .attr {
@@ -307,6 +312,10 @@ pre {
     color:#e6db6f;
 }
 
+.codeBlock .cssEl {
+    color:#f92772;
+}
+
 .codeBlock .integer {
     color:#8a7bff;
 }
@@ -315,6 +324,10 @@ pre {
     color:#f8f8f2;
     font-size:.9em;
     white-space:nowrap;
+}
+
+.codeBlock .parameter {
+    color:#fd9720;
 }
 
 .codeBlock span {
