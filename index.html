@@ -630,7 +630,7 @@
                                 </li>
                                 <li>
                                     <code class="tab1">
-                                        <span class="var">var</span> postsToHide = $(<span class="selector">"[data-postedBy="</span> <span class="condition">+</span> name <span class="condition">+</span> <span class="selector">"]"</span>);
+                                        <span class="var">var</span> postsToHide = <span class="element">$</span>(<span class="selector">"[data-postedBy="</span> <span class="condition">+</span> name <span class="condition">+</span> <span class="selector">"]"</span>);
                                     </code>
                                 </li>
                                 <li>
@@ -705,17 +705,17 @@
                         <ol class="codeBlock">
                             <li>
                                 <code class="tab">
-                                    /* ==========================================================================
+                                    <span class="comment">/* ==========================================================================</span>
                                 </code>
                             </li>
                             <li>
                                 <code class="tab1">
-                                    Nav Styles
+                                    <span class="comment">Nav Styles</span>
                                 </code>
                             </li>
                             <li>
                                 <code class="tab1">
-                                    ========================================================================== */
+                                    <span class="comment">========================================================================== */</span>
                                 </code>
                             </li>
                             <li>
@@ -964,13 +964,33 @@
 
                         </ul>
 
-                        <pre>
-                            -webkit-transition: all 4s ease;
-                            -moz-transition: all 4s ease;
-                            -ms-transition: all 4s ease;
-                            -o-transition: all 4s ease;
-                            transition: all 4s ease;
-                        </pre>
+                        <ol class="codeBlock">
+                            <li>
+                                <code>
+                                    -webkit-transition: <span class="css">all</span> <span class="integer">4</span><span class="condition">s</span> ease;
+                                </code>
+                            </li>
+                            <li>
+                                <code>
+                                    -moz-transition: <span class="css">all</span> <span class="integer">4</span><span class="condition">s</span> ease;
+                                </code>
+                            </li>
+                            <li>
+                                <code>
+                                    -ms-transition: <span class="css">all</span> <span class="integer">4</span><span class="condition">s</span> ease;
+                                </code>
+                            </li>
+                            <li>
+                                <code>
+                                    -o-transition: <span class="css">all</span> <span class="integer">4</span><span class="condition">s</span> ease;
+                                </code>
+                            </li>
+                            <li>
+                                <code>
+                                    transition: <span class="css">all</span> <span class="integer">4</span><span class="condition">s</span> ease;
+                                </code>
+                            </li>
+                        </ol>
 
                         <p>Here are a couple helpful tools, which generate the CSS with all the necessary prefix's</p>
 
@@ -1037,49 +1057,213 @@
 
                         <p>To quote Douglas Crockford "Javascript's loose typing and excessive error tolerance provide little compile-time assurance of our program's quality, so to compensate, we should code with strict discipline."  With that, here is what javascript should look like.</p>
 
-                        <pre>
+                        <ol class="codeBlock">
+                            <li>
+                                <code class="tab">
 
-                            //Get the question and nav elements relative to the question number passed in
-                            var correspondingQuestion = $('[data-slide="' + pressedButtonNum + '"]');
-                            var correspondingNav = $('[data-boxNum="' + pressedButtonNum + '"]');
+                                </code>
+                            </li>
+                            <li>
+                                <code class="tab">
+                                    <span class="comment">//Get the question and nav elements relative to the question number passed in</span>
+                                </code>
+                            </li>
+                            <li>
+                                <code class="tab">
+                                    <span class="var">var</span> correspondingQuestion = <span class="element">$</span>(<span class="selector">'[data-slide="'</span> <span class="condition">+</span> pressedButtonNum <span class="condition">+</span> <span class="selector">'"]'</span>);
+                                </code>
+                            </li>
+                            <li>
+                                <code class="tab">
+                                    <span class="var">var</span> correspondingNav = <span class="element">$</span>(<span class="selector">'[data-boxNum="'</span> <span class="condition">+</span> pressedButtonNum <span class="condition">+</span> <span class="selector">'"]'</span>);
+                                </code>
+                            </li>
+                            <li>
+                                <code class="tab">
 
+                                </code>
+                            </li>
+                            <li>
+                                <code class="tab">
 
-                            //Switch for action taken (tap nav, tap answer, or swipe)
-                            switch ( type ) {
-                              //answered yes
-                              case 'answeryes' :
+                                </code>
+                            </li>
+                            <li>
+                                <code class="tab">
+                                    <span class="comment">//Switch for action taken (tap nav, tap answer, or swipe)</span>
+                                </code>
+                            </li>
+                            <li>
+                                <code class="tab">
+                                    <span class="condition">switch</span> ( type ) {
+                                </code>
+                            </li>
+                            <li>
+                                <code class="tab1">
+                                    <span class="comment">//answered yes</span>
+                                </code>
+                            </li>
+                            <li>
+                                <code class="tab1">
+                                    <span class="condition">case</span> <span class="selector">'answeryes'</span> :
+                                </code>
+                            </li>
+                            <li>
+                                <code class="tab">
 
-                                correspondingNav.removeClass('btn-danger');
-                                correspondingNav.addClass('btn-success');
+                                </code>
+                            </li>
+                            <li>
+                                <code class="tab2">
+                                    correspondingNav.removeClass(<span class="selector">'btn-danger'</span>);
+                                </code>
+                            </li>
+                            <li>
+                                <code class="tab2">
+                                    correspondingNav.addClass(<span class="selector">'btn-success'</span>);
+                                </code>
+                            </li>
+                            <li>
+                                <code class="tab">
 
-                                break;
-                              //answered no
-                              case 'answerno' :
+                                </code>
+                            </li>
+                            <li>
+                                <code class="tab2">
+                                    <span class="condition">break</span>;
+                                </code>
+                            </li>
+                            <li>
+                                <code class="tab1">
+                                    <span class="comment">//answered no</span>
+                                </code>
+                            </li>
+                            <li>
+                                <code class="tab1">
+                                    <span class="condition">case</span> <span class="selector">'answerno'</span> :
+                                </code>
+                            </li>
+                            <li>
+                                <code class="tab">
 
-                                correspondingNav.removeClass('btn-success');
-                                correspondingNav.addClass('btn-danger');
+                                </code>
+                            </li>
+                            <li>
+                                <code class="tab2">
+                                    correspondingNav.removeClass(<span class="selector">'btn-success'</span>);
+                                </code>
+                            </li>
+                            <li>
+                                <code class="tab2">
+                                    correspondingNav.addClass(<span class="selector">'btn-danger'</span>);
+                                </code>
+                            </li>
+                            <li>
+                                <code class="tab">
 
-                                break;
-                              //swiped right
-                              case 'prev' :
+                                </code>
+                            </li>
+                            <li>
+                                <code class="tab2">
+                                    <span class="condition">break</span>;
+                                </code>
+                            </li>
+                            <li>
+                                <code class="tab1">
+                                    <span class="comment">//swiped right</span>
+                                </code>
+                            </li>
+                            <li>
+                                <code class="tab1">
+                                    <span class="condition">case</span> <span class="selector">'prev'</span> :
+                                </code>
+                            </li>
+                            <li>
+                                <code class="tab">
 
-                                //Check if this is the first question
-                                if ( pressedButtonNum === 1 ) {
-                                  correspondingQuestion = $('[data-slide=14]');
-                                  correspondingNav = $('[data-boxNum=14]');
+                                </code>
+                            </li>
+                            <li>
+                                <code class="tab2">
+                                    <span class="comment">//Check if this is the first question</span>
+                                </code>
+                            </li>
+                            <li>
+                                <code class="tab2">
+                                    <span class="condition">if</span> ( pressedButtonNum <span class="condition">===</span> <span class="integer">1</span> ) {
+                                </code>
+                            </li>
+                            <li>
+                                <code class="tab3">
+                                    correspondingQuestion = <span class="element">$</span>(<span class="selector">'[data-slide=14]'</span>);
+                                </code>
+                            </li>
+                            <li>
+                                <code class="tab3">
+                                    correspondingNav = <span class="element">$</span>(<span class="selector">'[data-boxNum=14]'</span>);
+                                </code>
+                            </li>
+                            <li>
+                                <code class="tab">
 
-                                } else {
-                                  correspondingQuestion = $('[data-slide="' + prevNum + '"]'),
-                                  correspondingNav = $('[data-boxNum="' + prevNum + '"]');
+                                </code>
+                            </li>
+                            <li>
+                                <code class="tab2">
+                                } <span class="condition">else</span> {
+                                </code>
+                            </li>
+                            <li>
+                                <code class="tab3">
+                                    correspondingQuestion = <span class="element">$</span>(<span class="selector">'[data-slide="'</span> <span class="condition">+</span> prevNum <span class="condition">+</span> <span class="selector">'"]'</span>),
+                                </code>
+                            </li>
+                            <li>
+                                <code class="tab3">
+                                    correspondingNav = <span class="element">$</span>(<span class="selector">'[data-boxNum="'</span> <span class="condition">+</span> prevNum <span class="condition">+</span> <span class="selector">'"]'</span>);
+                                </code>
+                            </li>
+                            <li>
+                                <code class="tab">
 
+                                </code>
+                            </li>
+                            <li>
+                                <code class="tab2">
                                 }
+                                </code>
+                            </li>
+                            <li>
+                                <code class="tab">
 
-                                break;
+                                </code>
+                            </li>
+                            <li>
+                                <code class="tab2">
+                                    <span class="condition">break</span>;
+                                </code>
+                            </li>
+                            <li>
+                                <code class="tab">
 
-                              default :
-                                break;
-                            }
-                        </pre>
+                                </code>
+                            </li>
+                            <li>
+                                <code class="tab1">
+                                    <span class="condition">default</span> :
+                                </code>
+                            </li>
+                            <li>
+                                <code class="tab2">
+                                    <span class="condition">break</span>;
+                                </code>
+                            </li>
+                            <li>
+                                <code class="tab">
+                                }
+                                </code>
+                            </li>
+                        </ol>
 
                     </section>
 
@@ -1115,34 +1299,90 @@
 
                         <p>Javascript comes loaded with 2 sets of equality operators.  One of them works the way you'd expect an equality operator to work, and is the only one you should ever use.</p>
 
-                        <pre>
-                            1 === 1 //true
-                            1 === '1' //false
-                            1 !== '1' //true
-                            1 !== 1 //false
-                        </pre>
+                        <ol class="codeBlock">
+                            <li>
+                                <code>
+                                    <span class="integer">1</span> <span class="condition">===</span> <span class="integer">1</span> <span class="comment">//true</span>
+                                </code>
+                            </li>
+                            <li>
+                                <code>
+                                    <span class="integer">1</span> <span class="condition">===</span> <span class="selector">'1'</span> <span class="comment">//false</span>
+                                </code>
+                            </li>
+                            <li>
+                                <code>
+                                    <span class="integer">1</span> <span class="condition">!==</span> <span class="selector">'1'</span> <span class="comment">//true</span>
+                                </code>
+                            </li>
+                            <li>
+                                <code>
+                                    <span class="integer">1</span> <span class="condition">!==</span> <span class="integer">1</span> <span class="comment">//false</span>
+                                </code>
+                            </li>
+                        </ol>
 
                         <p>The other operator is evil, breaks code, and doesn't work like you'd expect.</p>
 
-                        <pre>
-                            1 == 1 //true
-                            1 == '1' //true
-                            1 != '1' //false
-                            1 != 1 //false
-                            ' \t\r\n ' == 0 //true
-                        </pre>
+                        <ol class="codeBlock">
+                            <li>
+                                <code>
+                                    <span class="integer">1</span> <span class="condition">==</span> <span class="integer">1</span> <span class="comment">//true</span>
+                                </code>
+                            </li>
+                            <li>
+                                <code>
+                                    <span class="integer">1</span> <span class="condition">==</span> <span class="selector">'1'</span> <span class="comment">//true</span>
+                                </code>
+                            </li>
+                            <li>
+                                <code>
+                                    <span class="integer">1</span> <span class="condition">!=</span> <span class="selector">'1'</span> <span class="comment">//false</span>
+                                </code>
+                            </li>
+                            <li>
+                                <code>
+                                    <span class="integer">1</span> <span class="condition">!=</span> <span class="integer">1</span> <span class="comment">//false</span>
+                                </code>
+                            </li>
+                            <li>
+                                <code>
+                                    ' <span class="integer">\t\r\n</span> ' <span class="condition">==</span> <span class="integer">0</span> <span class="comment">//true</span>
+                                </code>
+                            </li>
+                        </ol>
 
                         <p>The blame for this lies within javascript's coercion "feature".  The == operator attempts to coerce the values, so mixing types (String, Number, Boolean, Array, Object, Null, Undefined) will unexpectedly return very incorrect results.  The rules for coercion are far too stupid to bother explaining/understanding.  It's basically like saying a banana and a potato are the same thing because they are both types of food you've eaten.</p>
 
                         <p>Coercion can alse be problematic when it comes to concatenation.</p>
 
-                        <pre>
-                            1 + 'cat' //"1cat"
-                            1 + 3 + 'cat' //"4cat"
-                            1 + '3' + 'cat' //"13cat"
-                            '1' + 3 + 'cat' //"13cat"
-                            'cat' + 10 + 30 //"cat1030"
-                        </pre>
+                        <ol class="codeBlock">
+                            <li>
+                                <code>
+                                    <span class="integer">1</span> <span class="condition">+</span> <span class="selector">'cat'</span> <span class="comment">//"1cat"</span>
+                                </code>
+                            </li>
+                            <li>
+                                <code>
+                                    <span class="integer">1</span> <span class="condition">+</span> <span class="integer">3</span> <span class="condition">+</span> <span class="selector">'cat'</span> <span class="comment">//"4cat"</span>
+                                </code>
+                            </li>
+                            <li>
+                                <code>
+                                    <span class="integer">1</span> <span class="condition">+</span> <span class="selector">'3'</span> <span class="condition">+</span> <span class="selector">'cat'</span> <span class="comment">//"13cat"</span>
+                                </code>
+                            </li>
+                            <li>
+                                <code>
+                                    <span class="selector">'1'</span> <span class="condition">+</span> <span class="integer">3</span> <span class="condition">+</span> <span class="selector">'cat'</span> <span class="comment">//"13cat"</span>
+                                </code>
+                            </li>
+                            <li>
+                                <code>
+                                    <span class="selector">'cat'</span> <span class="condition">+</span> <span class="integer">10</span> <span class="condition">+</span> <span class="integer">30</span> <span class="comment">//"cat1030"</span>
+                                </code>
+                            </li>
+                        </ol>
 
                     </section>
 
@@ -1152,20 +1392,48 @@
 
                         <p>Javascript attempts to fix broken code by automatically inserting semicolons, where it thinks they should go.  This can be problematic and should be avoided.  Semicolons are to explicitly be put at the end of functions, method calls, breaks, and return statements.</p>
 
-                        <pre>
-                            return
-                            {
-                                name : 'joe'
-                            }
-                        </pre>
+                        <ol class="codeBlock">
+                            <li>
+                                <code>
+                                    <span class="condition">return</span>
+                                </code>
+                            </li>
+                            <li>
+                                <code>
+                                    {
+                                </code>
+                            </li>
+                            <li>
+                                <code class="tab1">
+                                    name : <span class="selector">'joe'</span>
+                                </code>
+                            </li>
+                            <li>
+                                <code>
+                                    }
+                                </code>
+                            </li>
+                        </ol>
 
                         <p>The above code looks as if it should return an object with a name member.  However due to an automatic placement of a semicolon on the return, the function drops out there and nothing is returned.  As such no bugs are thrown and this bug is a mystery.  This can be avoided by putting the opening { on the same line as the return.</p>
 
-                        <pre>
-                            return {
-                                name : 'joe'
-                            }
-                        </pre>
+                        <ol class="codeBlock">
+                            <li>
+                                <code>
+                                    <span class="condition">return</span> {
+                                </code>
+                            </li>
+                            <li>
+                                <code class="tab1">
+                                    name : <span class="selector">'joe'</span>
+                                </code>
+                            </li>
+                            <li>
+                                <code>
+                                    }
+                                </code>
+                            </li>
+                        </ol>
 
                     </section>
 
@@ -1175,75 +1443,247 @@
 
                         <p>All of your block conditionals and loops should be done in this format.</p>
 
-                        <pre>
-                            for ( var i = 0, t = that.length; i < t; i++ ) {
+                        <ol class="codeBlock">
+                            <li>
+                                <code class="tab">
+                                    <span class="condition">for</span> ( <span class="var">var</span> i <span class="condition">=</span> <span class="integer">0</span>, t <span class="condition">=</span> that.<span class="methodCall">length</span>; i <span class="condition">&lt;</span> t; i<span class="condition">++</span> ) {
+                                </code>
+                            </li>
+                            <li>
+                                <code class="tab">
 
-                                var thisEl = that[t];
+                                </code>
+                            </li>
+                            <li>
+                                <code class="tab1">
+                                    <span class="var">var</span> thisEl <span class="condition">=</span> that[t];
+                                </code>
+                            </li>
+                            <li>
+                                <code class="tab">
 
-                                if ( thisEl.id == 'elImLookingFor' ) {
+                                </code>
+                            </li>
+                            <li>
+                                <code class="tab1">
+                                    <span class="condition">if</span> ( thisEl.<span class="methodCall">id</span> <span class="condition">===</span> <span class="selector">'elImLookingFor'</span> ) {
+                                </code>
+                            </li>
+                            <li>
+                                <code class="tab">
 
-                                    //Get elements height, split the string, removing px
-                                    //Parse the string to an integer, add 100 use coercion to conver back to string with px on the end and set the height
-                                    thisEl.style.height = parseInt(thisEl.style.height.split('px')[0]) + 100 + 'px';
+                                </code>
+                            </li>
+                            <li>
+                                <code class="tab2">
+                                    <span class="comment">//Get elements height, split the string, removing px</span>
+                                </code>
+                            </li>
+                            <li>
+                                <code class="tab2">
+                                    <span class="comment">//Parse the string to an integer, add 100 use coercion to conver back to string with px on the end and set the height</span>
+                                </code>
+                            </li>
+                            <li>
+                                <code class="tab2">
+                                    thisEl.<span class="methodCall">style</span>.<span class="methodCall">height</span> <span class="condition">=</span> <span class="methodCall">parseInt</span>(thisEl.<span class="methodCall">style</span>.<span class="methodCall">height</span>.<span class="methodCall">split</span>(<span class="selector">'px'</span>)[<span class="integer">0</span>]) <span class="condition">+</span> <span class="integer">100</span> <span class="condition">+</span> <span class="selector">'px'</span>;
+                                </code>
+                            </li>
+                            <li>
+                                <code class="tab">
 
+                                </code>
+                            </li>
+                            <li>
+                                <code class="tab1">
                                 }
+                            </code>
+                        </li>
+                            <li>
+                                <code class="tab">
 
-                            }
-                        </pre>
+                                </code>
+                            </li>
+                            <li>
+                                <code class="tab">
+                                }
+                            </code>
+                        </li>
+                        </ol>
 
                         <p>Please use the extra spaces in between the parens which contain the conditions.  For and While loops should have their iterators ( var i = 0 ) declared as local variables oppose to global variables ( i = 0 ).</p>
 
                         <p>An if statement which only has a single line inside it doesn't need to use curly brackets.  However, it's not very costly to add them and,  it can help prevent missing things like this.</p>
 
-                        <pre>
-                            if ( that.length )
-                                doThis();
-                                andThat();
-                        </pre>
+                        <ol class="codeBlock">
+                            <li>
+                                <code class="tab">
+                                    <span class="condition">if</span> ( that.<span class="methodCall">length</span> )
+                                </code>
+                            </li>
+                            <li>
+                                <code class="tab1">
+                                    doThis();
+                                </code>
+                            </li>
+                            <li>
+                                <code class="tab1">
+                                    andThat();
+                                </code>
+                            </li>
+                        </ol>
 
                         <p>This looks like.</p>
 
-                        <pre>
-                            if ( that.length ) {
-                                doThis();
-                                andThat();
-                            }
-                        </pre>
+                        <ol class="codeBlock">
+                            <li>
+                                <code class="tab">
+                                    <span class="condition">if</span> ( that.<span class="methodCall">length</span> ) {
+                                </code>
+                            </li>
+                            <li>
+                                <code class="tab1">
+                                    doThis();
+                                </code>
+                            </li>
+                            <li>
+                                <code class="tab1">
+                                    andThat();
+                                </code>
+                            </li>
+                            <li>
+                                <code>
+                                    }
+                                </code>
+                            </li>
+                        </ol>
 
                         <p>It actually means this.</p>
 
-                        <pre>
-                            if ( that.length ) {
-                                doThis();
-                            }
-                            andThat();
-                        </pre>
+                        <ol class="codeBlock">
+                            <li>
+                                <code class="tab">
+                                    <span class="condition">if</span> ( that.<span class="methodCall">length</span> ) {
+                                </code>
+                            </li>
+                            <li>
+                                <code class="tab1">
+                                    doThis();
+                                </code>
+                            </li>
+                            <li>
+                                <code>
+                                    }
+                                </code>
+                            </li>
+                            <li>
+                                <code>
+                                    andThat();
+                                </code>
+                            </li>
+                        </ol>
 
                         <p>This can be a difficult to spot.</p>
 
                         <p>Be certain to never let your switch cases fall through by forgetting to add breaks.</p>
 
-                        <pre>
-                            switch (expression) {
+                        <ol class="codeBlock">
+                            <li>
+                                <code>
+                                    <span class="condition">switch</span> (expression) {
+                                </code>
+                            </li>
+                            <li>
+                                <code>
 
-                               case label1:
-                                  statements1
-                                  break;
+                                </code>
+                            </li>
+                            <li>
+                                <code class="tab1">
+                                    <span class="condition">case</span> label1:
+                                </code>
+                            </li>
+                            <li>
+                                <code class="tab2">
+                                    statements1
+                                </code>
+                            </li>
+                            <li>
+                                <code class="tab2">
+                                    <span class="condition">break</span>;
+                                </code>
+                            </li>
+                            <li>
+                                <code>
 
-                               case label2:
-                                  statements2
-                                  break;
+                                </code>
+                            </li>
+                            <li>
+                                <code class="tab1">
+                                    <span class="condition">case</span> label2:
+                                </code>
+                            </li>
+                            <li>
+                                <code class="tab2">
+                                    statements2
+                                </code>
+                            </li>
+                            <li>
+                                <code class="tab2">
+                                    <span class="condition">break</span>;
+                                </code>
+                            </li>
+                            <li>
+                                <code>
 
-                               case labelN:
-                                  statementsN
-                                  break;
+                                </code>
+                            </li>
+                            <li>
+                                <code class="tab1">
+                                    <span class="condition">case</span> labelN:
+                                </code>
+                            </li>
+                            <li>
+                                <code class="tab2">
+                                    statementsN
+                                </code>
+                            </li>
+                            <li>
+                                <code class="tab2">
+                                    <span class="condition">break</span>;
+                                </code>
+                            </li>
+                            <li>
+                                <code>
 
-                               default:
-                                  statements_def
-                                  break;
+                                </code>
+                            </li>
+                            <li>
+                                <code class="tab1">
+                                    <span class="condition">default</span>:
+                                </code>
+                            </li>
+                            <li>
+                                <code class="tab2">
+                                    statements_def
+                                </code>
+                            </li>
+                            <li>
+                                <code class="tab2">
+                                    <span class="condition">break</span>;
+                                </code>
+                            </li>
+                            <li>
+                                <code>
 
-                            }
-                        </pre>
+                                </code>
+                            </li>
+                            <li>
+                                <code>
+                                    }
+                                </code>
+                            </li>
+                        </ol>
 
                     </section>
 
