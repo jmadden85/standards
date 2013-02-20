@@ -165,7 +165,7 @@ h3 {
     margin:5px 0 5px 0;
 }
 
-a {
+.content a {
     font-weight:bold;
     background:yellow;
 }
